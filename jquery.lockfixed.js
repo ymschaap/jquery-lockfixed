@@ -26,8 +26,8 @@
 			if(el && el.offset()){
 				var el_top = el.offset().top,
 				el_left = el.offset().left,
-				el_height = el.height(),
-				el_width = el.width(),
+				el_height = el.outerHeight(true),
+				el_width = el.outerWidth(),
 				el_position = el.css("position"),
 				el_position_top = el.css("top"),
 				el_margin_top = parseInt(el.css("marginTop"),10),
@@ -44,8 +44,8 @@
 				}
 
 	
-				$(window).bind('scroll resize orientationchange',el,function(e){
-					var el_height = el.outerHeight(),
+				$(window).bind('scroll resize orientationchange load',el,function(e){
+					var el_height = el.outerHeight(true),
 						width = el.parent().outerWidth(),
 						scroll_top = $(window).scrollTop();
 
