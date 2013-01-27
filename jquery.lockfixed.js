@@ -45,7 +45,7 @@
 
 	
 				$(window).bind('scroll resize orientationchange load',el,function(e){
-					var el_height = el.outerHeight(true),
+					var el_height = el.outerHeight(),
 						width = el.parent().outerWidth(),
 						scroll_top = $(window).scrollTop();
 
