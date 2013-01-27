@@ -1,0 +1,35 @@
+{
+    "name": "lockfixed",
+    "title": "jQuery Lock Fixed",
+    "description": "jQuery plugin which allows for DOM elements to be positioned anywhere on the page, and lock into place when scrolled. Common example is a menu under a logo, where after scrolling you want to keep the menu in the viewport while scrolling.",
+    "keywords": [
+        "fixed",
+        "dom",
+        "ui",
+        "scroll"
+    ],
+    "version": "0.0.5",
+    "author": {
+        "name": "Lyrics",
+        "url": "http://www.directlyrics.com/code/lockfixed/"
+    },
+    "maintainers": [
+        {
+            "name": "Yvo Schaap",
+            "email": "yvo@yvoschaap.com",
+            "url": "http://www.directlyrics.com/"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://www.directlyrics.com/code/lockfixed/license.txt"
+        }
+    ],
+    "homepage": "http://www.directlyrics.com/code/lockfixed/",
+    "demp": "http://www.directlyrics.com/code/lockfixed/demo.html",
+    "docs": "http://www.directlyrics.com/code/lockfixed/",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
