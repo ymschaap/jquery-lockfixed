@@ -20,7 +20,7 @@
 				config.offset.bottom = parseInt(config.offset.bottom,10);
 				config.offset.top = parseInt(config.offset.top,10);
 			}else{
-				config.offset = {bottom: 30, top: 85};	
+				config.offset = {bottom: 100, top: 0};	
 			}
 			var el =$(el);
 			if(el && el.offset()){
