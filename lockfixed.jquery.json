@@ -10,12 +10,12 @@
     ],
     "version": "0.0.6",
     "author": {
-        "name": "Lyrics",
+        "name": "Yvo Schaap",
         "url": "http://www.directlyrics.com/code/lockfixed/"
     },
     "maintainers": [
         {
-            "name": "Yvo Schaap",
+            "name": "Lyrics",
             "email": "yvo@yvoschaap.com",
             "url": "http://www.directlyrics.com/"
         }

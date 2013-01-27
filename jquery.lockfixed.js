@@ -42,30 +42,26 @@
 				if (config.forcemargin === true || navigator.userAgent.match(/\bMSIE (4|5|6)\./) || navigator.userAgent.match(/\bOS (3|4|5|6)_/) || navigator.userAgent.match(/\bAndroid (1|2|3|4)\./i)){
 					pos_not_fixed = true;
 				}
-
 	
 				$(window).bind('scroll resize orientationchange load',el,function(e){
 					var el_height = el.outerHeight(),
-						width = el.parent().outerWidth(),
 						scroll_top = $(window).scrollTop();
 
 					//if we have a input focus don't change this (for ios zoom and stuff)
 					if(pos_not_fixed && document.activeElement && document.activeElement.nodeName === "INPUT"){
 						return;	
 					}	
-					if(width < 1){
-						width = el_width;	
-					}
 
 					if (scroll_top >= (el_top-(el_margin_top ? el_margin_top : 0)-config.offset.top)){
-						if((scroll_top + el_height) > max_height){
-							top = (scroll_top + el_height) - max_height;
+
+						if(max_height < (scroll_top + el_height + el_margin_top + config.offset.top)){
+							top = (scroll_top + el_height + el_margin_top + config.offset.top) - max_height;
 						}else{
 							top = 0;	
 						}
-						
+
 						if (pos_not_fixed){
-							el.css({'marginTop': parseInt((scroll_top - el_top - top) + 2 * config.offset.top,10)+'px'});
+							el.css({'marginTop': parseInt(((el_margin_top ? el_margin_top : 0) + (scroll_top - el_top - top) + 2 * config.offset.top),10)+'px'});
 						}else{
 							el.css({'position': 'fixed','top':(config.offset.top-top)+'px','width':el_width +"px"});
 						}
