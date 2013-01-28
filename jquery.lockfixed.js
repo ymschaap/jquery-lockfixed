@@ -12,7 +12,7 @@
 	$.extend({
 		/**
 		 * Lockfixed initiated
-		 * @param {Object} el - a jquery element, DOM node or selector string
+		 * @param {Element} el - a jquery element, DOM node or selector string
 		 * @param {Object} config - offset - forcemargin
 		 */
 		"lockfixed": function(el, config){
