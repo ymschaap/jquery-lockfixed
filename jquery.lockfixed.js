@@ -6,7 +6,6 @@
  * Released under the MIT license
  * http://www.directlyrics.com/code/lockfixed/license.txt
  *
- * Date: Sun Jan 27 2013 12:00:00 GMT
  */
 (function($, undefined){
 	$.extend({
@@ -38,7 +37,7 @@
 				
 				/* we prefer feature testing, too much hassle for the upside */
 				/* while prettier to use position: fixed (less jitter when scrolling) */
-				/* iOS 5+ + Andriud has fixed support, but issue with toggeling between fixed and not and zoomed view, is iOs only calls after scroll is done, so we ignore iOS 5 for now */
+				/* iOS 5+ + Andriud has fixed support, but issue with toggeling between fixed and not and zoomed view, is iOS only calls after scroll is done, so we ignore iOS + Android */
 				if (config.forcemargin === true || navigator.userAgent.match(/\bMSIE (4|5|6)\./) || navigator.userAgent.match(/\bOS (3|4|5|6)_/) || navigator.userAgent.match(/\bAndroid (1|2|3|4)\./i)){
 					pos_not_fixed = true;
 				}

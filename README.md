@@ -22,7 +22,7 @@ Find the [documentation](http://www.directlyrics.com/code/lockfixed/).
 
 ### Problems?
 
-Just send either one of us a message on Twitter: @yvoschaap.
+Just send a message on Twitter: @yvoschaap.
 
 ### License
 
