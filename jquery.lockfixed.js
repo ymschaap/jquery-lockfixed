@@ -47,6 +47,9 @@
 				$(window).bind('scroll resize orientationchange load',el,function(e){
 					var el_height = el.outerHeight(),
 						scroll_top = $(window).scrollTop();
+					
+					// check height on load event (specifically) due to elements being hidden on DOM ready - is this case, the height value is incorrect)
+					max_height = $(document).height() - config.offset.bottom;
 
 					//if we have a input focus don't change this (for ios zoom and stuff)
 					if(pos_not_fixed && document.activeElement && document.activeElement.nodeName === "INPUT"){
