@@ -33,7 +33,8 @@
 				max_height = $(document).height() - config.offset.bottom,
 				top = 0,
 				swtch = false,
-				pos_not_fixed = false;
+				pos_not_fixed = false,
+				el_right_float = el.css('float') === 'right';;
 				
 				/* we prefer feature testing, too much hassle for the upside */
 				/* while prettier to use position: fixed (less jitter when scrolling) */
@@ -65,10 +66,10 @@
 						if (pos_not_fixed){
 							el.css({'marginTop': parseInt(((el_margin_top ? el_margin_top : 0) + (scroll_top - el_top - top) + 2 * config.offset.top),10)+'px'});
 						}else{
-							el.css({'position': 'fixed','top':(config.offset.top-top)+'px','width':el_width +"px"});
+							el.css({'position': 'fixed','top':(config.offset.top-top)+'px','width':el_width +"px",'left':el_right_float ? el_left + "px" : 'auto'});
 						}
 					}else{
-						el.css({'position': el_position,'top': el_position_top, 'width':el_width +"px", 'marginTop': (el_margin_top ? el_margin_top : 0)+"px"});
+						el.css({'position': el_position,'top': el_position_top, 'width':el_width +"px", 'marginTop': (el_margin_top ? el_margin_top : 0)+"px",'left':el_right_float ? el_left + "px" : 'auto'});
 					}
 				});	
 			}
