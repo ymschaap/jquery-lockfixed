@@ -6,7 +6,7 @@
  * Released under the MIT license
  * http://www.directlyrics.com/code/lockfixed/license.txt
  *
- * Date: Sun Jan 27 2013 12:00:00 GMT
+ * Date: Thue Dec 12 2013 12:00:00 GMT
  */
 (function($, undefined){
 	$.extend({
@@ -25,7 +25,6 @@
 			var el =$(el);
 			if(el && el.offset()){
 				var el_top = el.offset().top,
-				el_left = el.offset().left,
 				el_height = el.outerHeight(true),
 				el_width = el.outerWidth(),
 				el_position = el.css("position"),
@@ -38,14 +37,17 @@
 				
 				/* we prefer feature testing, too much hassle for the upside */
 				/* while prettier to use position: fixed (less jitter when scrolling) */
-				/* iOS 5+ + Andriud has fixed support, but issue with toggeling between fixed and not and zoomed view, is iOs only calls after scroll is done, so we ignore iOS 5 for now */
-				if (config.forcemargin === true || navigator.userAgent.match(/\bMSIE (4|5|6)\./) || navigator.userAgent.match(/\bOS (3|4|5|6)_/) || navigator.userAgent.match(/\bAndroid (1|2|3|4)\./i)){
+				/* iOS 5+ + Android has fixed support, but issue with toggeling between fixed and not and zoomed view */
+				if (config.forcemargin === true || navigator.userAgent.match(/\bMSIE (4|5|6)\./) || navigator.userAgent.match(/\bOS ([0-9])_/) || navigator.userAgent.match(/\bAndroid ([0-9])\./i)){
 					pos_not_fixed = true;
 				}
 	
 				$(window).bind('scroll resize orientationchange load',el,function(e){
 					var el_height = el.outerHeight(),
 						scroll_top = $(window).scrollTop();
+					
+					// check height on load event (specifically) due to elements being hidden on DOM ready - is this case, the height value is incorrect)
+					max_height = $(document).height() - config.offset.bottom;
 
 					//if we have a input focus don't change this (for ios zoom and stuff)
 					if(pos_not_fixed && document.activeElement && document.activeElement.nodeName === "INPUT"){
