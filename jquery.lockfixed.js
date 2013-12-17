@@ -6,7 +6,7 @@
  * Released under the MIT license
  * http://www.directlyrics.com/code/lockfixed/license.txt
  *
- * Date: Thue Dec 12 2013 12:00:00 GMT
+ * Date: Thue Dec 12 2013 12:00:01 GMT
  */
 (function($, undefined){
 	$.extend({
