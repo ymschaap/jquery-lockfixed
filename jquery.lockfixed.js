@@ -6,7 +6,7 @@
  * Released under the MIT license
  * http://www.directlyrics.com/code/lockfixed/license.txt
  *
- * Date: Thue Dec 12 2013 12:00:01 GMT
+ * Date: Sat Jan 4 2014 12:00:01 GMT
  */
 (function($, undefined){
 	$.extend({
@@ -25,7 +25,7 @@
 			var el =$(el);
 			if(el && el.offset()){
 				var el_top = el.offset().top,
-				el_height = el.outerHeight(true),
+				el_height = el.outerHeight(),
 				el_width = el.outerWidth(),
 				el_position = el.css("position"),
 				el_position_top = el.css("top"),
@@ -42,17 +42,17 @@
 					pos_not_fixed = true;
 				}
 	
-				$(window).bind('scroll resize orientationchange load',el,function(e){
+				$(window).bind('scroll resize orientationchange load lockfixed:pageupdate',el,function(e){
 					var el_height = el.outerHeight(),
 						scroll_top = $(window).scrollTop();
 					
-					// check height on load event (specifically) due to elements being hidden on DOM ready - is this case, the height value is incorrect)
+					//check height on load event (specifically) due to elements being hidden on DOM ready - is this case, the height value is incorrect)
 					max_height = $(document).height() - config.offset.bottom;
-
+					
 					//if we have a input focus don't change this (for ios zoom and stuff)
 					if(pos_not_fixed && document.activeElement && document.activeElement.nodeName === "INPUT"){
 						return;	
-					}	
+					}
 
 					if (scroll_top >= (el_top-(el_margin_top ? el_margin_top : 0)-config.offset.top)){
 
