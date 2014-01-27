@@ -27,3 +27,8 @@ Just send either one of us a message on Twitter: @yvoschaap.
 ### License
 
 lockfixed is released under the MIT license.  See the [license](http://www.directlyrics.com/code/lockfixed/license.txt) for details.
+
+
+## Keywords for repository search:
+
+lockfixed, sticky, scroll, set, element

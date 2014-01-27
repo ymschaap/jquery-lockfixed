@@ -6,16 +6,17 @@
         "fixed",
         "dom",
         "ui",
-        "scroll"
+        "scroll",
+        "lockfixed"
     ],
-    "version": "0.7.5",
+    "version": "0.7.7",
     "author": {
         "name": "Yvo Schaap",
         "url": "http://www.directlyrics.com/code/lockfixed/"
     },
     "maintainers": [
         {
-            "name": "Lyrics",
+            "name": "Directlyrics",
             "email": "yvo@yvoschaap.com",
             "url": "http://www.directlyrics.com/"
         }
@@ -27,7 +28,7 @@
         }
     ],
     "homepage": "http://www.directlyrics.com/code/lockfixed/",
-    "demp": "http://www.directlyrics.com/code/lockfixed/demo.html",
+    "demo": "http://www.directlyrics.com/code/lockfixed/demo.html",
     "docs": "http://www.directlyrics.com/code/lockfixed/",
     "dependencies": {
         "jquery": ">=1.5"
