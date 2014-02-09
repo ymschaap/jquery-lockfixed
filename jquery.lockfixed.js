@@ -6,7 +6,7 @@
  * Released under the MIT license
  * http://www.directlyrics.com/code/lockfixed/license.txt
  *
- * Date: Sat Feb 8 2014 12:00:01 GMT
+ * Date: Sun Feb 9 2014 12:00:01 GMT
  */
 (function($, undefined){
 	$.extend({
@@ -22,7 +22,7 @@
 			}else{
 				config.offset = {bottom: 100, top: 0};	
 			}
-			var el =$(el);
+			var el = $(el);
 			if(el && el.offset()){
 				var el_position = el.css("position"),
 					el_margin_top = parseInt(el.css("marginTop"),10),
@@ -38,10 +38,19 @@
 				if (config.forcemargin === true || navigator.userAgent.match(/\bMSIE (4|5|6)\./) || navigator.userAgent.match(/\bOS ([0-9])_/) || navigator.userAgent.match(/\bAndroid ([0-9])\./i)){
 					pos_not_fixed = true;
 				}
-	
+
+				/*
+				// adds throttle to position calc; modern browsers should handle resize event fine
 				$(window).bind('scroll resize orientationchange load lockfixed:pageupdate',el,function(e){
 
-					// if we have a input focus don't change this (for ios zoom and stuff)
+					window.setTimeout(function(){
+						$(document).trigger('lockfixed:pageupdate:async');
+					});			
+				});
+				*/
+
+				$(window).bind('scroll resize orientationchange load lockfixed:pageupdate',el,function(e){
+					// if we have a input focus don't change this (for smaller screens)
 					if(pos_not_fixed && document.activeElement && document.activeElement.nodeName === "INPUT"){
 						return;	
 					}
@@ -53,7 +62,7 @@
 						scroll_top = $(window).scrollTop();
  
 					// if element is not currently fixed position, reset measurements ( this handles DOM changes in dynamic pages )
-					if (el.css("position") != "fixed") {
+					if (el.css("position") !== "fixed") {
 						el_top = el.offset().top;
 						el_margin_top = parseInt(el.css("marginTop"),10);
 						el_position_top = el.css("top");
@@ -73,7 +82,7 @@
 							el.css({'position': 'fixed','top':(config.offset.top-top)+'px','width':el_width +"px"});
 						}
 					}else{
-						el.css({'position': el_position,'top': el_position_top, 'width':el_width +"px", 'marginTop': (el_margin_top ? el_margin_top : 0)+"px"});
+						el.css({'position': el_position,'top': el_position_top, 'width':el_width +"px", 'marginTop': (el_margin_top && !pos_not_fixed ? el_margin_top : 0)+"px"});
 					}
 				});	
 			}
