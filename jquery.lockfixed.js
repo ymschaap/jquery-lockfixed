@@ -40,12 +40,12 @@
 				}
 
 				/*
-				// adds throttle to position calc; modern browsers should handle resize event fine
-				$(window).bind('scroll resize orientationchange load lockfixed:pageupdate',el,function(e){
+				// adds throttle to scroll call
+				$(window).bind('scroll',el,function(e){
 
 					window.setTimeout(function(){
-						$(document).trigger('lockfixed:pageupdate:async');
-					});			
+						$(document).trigger('lockfixed:pageupdate');
+					},25);			
 				});
 				*/
 
@@ -62,9 +62,8 @@
 						scroll_top = $(window).scrollTop();
  
 					// if element is not currently fixed position, reset measurements ( this handles DOM changes in dynamic pages )
-					if (el.css("position") !== "fixed") {
+					if (el.css("position") !== "fixed" && !pos_not_fixed) {
 						el_top = el.offset().top;
-						el_margin_top = parseInt(el.css("marginTop"),10);
 						el_position_top = el.css("top");
 					}
 
@@ -77,7 +76,7 @@
 						}
 
 						if (pos_not_fixed){
-							el.css({'marginTop': parseInt(((el_margin_top ? el_margin_top : 0) + (scroll_top - el_top - top) + 2 * config.offset.top),10)+'px'});
+							el.css({'marginTop': (parseInt(scroll_top - el_top - top,10) + (2 * config.offset.top))+'px'});
 						}else{
 							el.css({'position': 'fixed','top':(config.offset.top-top)+'px','width':el_width +"px"});
 						}
