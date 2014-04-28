@@ -22,7 +22,7 @@ Find the [documentation](http://www.directlyrics.com/code/lockfixed/).
 
 ### Problems?
 
-Just send either one of us a message on Twitter: @yvoschaap.
+Just send me a message via @yvoschaap or yvo@yvoschaap.com.
 
 ### License
 
@@ -31,4 +31,4 @@ lockfixed is released under the MIT license.  See the [license](http://www.direc
 
 ## Keywords for repository search:
 
-lockfixed, sticky, scroll, set, element
+lockfixed, sticky, scroll, set, element, lock, fixed, lock fixed
