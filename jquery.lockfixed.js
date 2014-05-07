@@ -6,7 +6,7 @@
  * Released under the MIT license
  * http://www.directlyrics.com/code/lockfixed/license.txt
  *
- * Date: Sun Feb 9 2014 12:00:01 GMT
+ * Date: Sun March 4 2014 12:00:01 GMT
  */
 (function($, undefined){
 	$.extend({
@@ -49,7 +49,7 @@
 				});
 				*/
 
-				$(window).bind('scroll resize orientationchange load lockfixed:pageupdate',el,function(e){
+				$(window).bind('DOMContentLoaded load scroll resize orientationchange lockfixed:pageupdate',el,function(e){
 					// if we have a input focus don't change this (for smaller screens)
 					if(pos_not_fixed && document.activeElement && document.activeElement.nodeName === "INPUT"){
 						return;	
