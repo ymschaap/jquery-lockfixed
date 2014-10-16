@@ -25,7 +25,7 @@
 			var el = $(el);
 			if(el && el.offset()){
 				var el_position = el.css("position"),
-					el_margin_top = parseInt(el.css("marginTop"),10),
+					el_margin_top = parseInt(el.css("marginTop"),10) || 0,
 					el_position_top = el.css("top"),
 					el_top = el.offset().top,
 					pos_not_fixed = false;
@@ -69,7 +69,10 @@
 
 					if (scroll_top >= (el_top-(el_margin_top ? el_margin_top : 0)-config.offset.top)){
 
-						if(max_height < (scroll_top + el_height + el_margin_top + config.offset.top)){
+						if(
+							max_height < (scroll_top + el_height + el_margin_top + config.offset.top) &&
+							el_height + config.offset.top > $(window).height()
+						){
 							top = (scroll_top + el_height + el_margin_top + config.offset.top) - max_height;
 						}else{
 							top = 0;	
