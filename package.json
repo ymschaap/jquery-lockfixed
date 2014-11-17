@@ -1,0 +1,39 @@
+{
+    "name": "lockfixed",
+    "title": "jQuery Lock Fixed",
+    "description": "jQuery plugin which allows for DOM elements to be positioned anywhere on the page, and lock within the user's viewport when scrolling. Common use case is a menu under a header, which on scrolling stays fixed within the viewport.",
+    "keywords": [
+        "jquery-plugin",
+        "fixed",
+        "dom",
+        "ui",
+        "scroll",
+        "lockfixed",
+        "lock fixed",
+        "sticky"
+    ],
+    "version": "0.8.4",
+    "author": {
+        "name": "Yvo Schaap",
+        "url": "http://www.directlyrics.com/code/lockfixed/"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://www.directlyrics.com/code/lockfixed/license.txt"
+        }
+    ],
+    "homepage": "http://www.directlyrics.com/code/lockfixed/",
+    "demo": "http://www.directlyrics.com/code/lockfixed/demo.html",
+    "docs": "http://www.directlyrics.com/code/lockfixed/",
+    "dependencies": {
+        "jquery": ">=1.5"
+    },
+   "repository": {
+        "type": "git",
+        "url": "https://github.com/ymschaap/jquery-lockfixed"
+   },
+   "bugs": {
+        "url": "https://github.com/ymschaap/jquery-lockfixed/issues"
+   }
+}
