@@ -10,9 +10,10 @@
         "scroll",
         "lockfixed",
         "lock fixed",
-        "sticky"
+        "sticky",
+        "jquery"
     ],
-    "version": "0.8.4",
+    "version": "0.9.0",
     "author": {
         "name": "Yvo Schaap",
         "url": "http://www.directlyrics.com/code/lockfixed/"
