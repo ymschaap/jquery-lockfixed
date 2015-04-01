@@ -13,7 +13,7 @@
         "sticky",
         "jquery"
     ],
-    "version": "0.9.0",
+    "version": "0.9.1",
     "author": {
         "name": "Yvo Schaap",
         "url": "http://www.directlyrics.com/code/lockfixed/"

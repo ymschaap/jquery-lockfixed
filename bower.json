@@ -1,0 +1,31 @@
+{
+  "name": "jquery-lockfixed",
+  "version": "0.9.1",
+  "description": "lockfixed is a jQuery plugin which allows for DOM elements to be positioned anywhere on the page, and lock within the user's viewport when scrolling.",
+  "main": "jquery.lockfixed.js",
+  "dependencies": {
+    "jquery": ">=1.5"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "lockfixed",
+    "lock",
+    "fixed",
+    "sticky",
+    "css"
+  ],
+  "authors": [
+    { "name": "Yvo Schaap",
+      "homepage": "http://www.directlyrics.com/code/lockfixed/"
+	}
+  ],
+  "license": "MIT",
+  "homepage": "http://www.directlyrics.com/code/lockfixed/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
