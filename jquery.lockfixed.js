@@ -6,7 +6,7 @@
  * Released under the MIT license
  * http://www.directlyrics.com/code/lockfixed/license.txt
  *
- * Date: Wed April 1 2015 12:00:01 GMT
+ * Date: Mon December 28 2015 14:56:01 GMT+1
  */
 (function($, undefined) {
 	$.extend({
@@ -67,7 +67,7 @@
 					if (scroll_top >= (el_top - (el_margin_top ? el_margin_top : 0) - config.offset.top)) {
 
 						if (max_height < (scroll_top + el_height + el_margin_top + config.offset.top) &&
-							el_height + config.offset.top > $(window).height()
+							el_height + config.offset.top + config.offset.bottom > $(window).height()
 						) {
 							top = (scroll_top + el_height + el_margin_top + config.offset.top) - max_height;
 						} else {
