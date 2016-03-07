@@ -56,7 +56,18 @@
 						el_height = el.outerHeight(),
 						el_width = el.outerWidth(),
 						max_height = $(document).height() - config.offset.bottom,
-						scroll_top = $(window).scrollTop();
+						scroll_top = $(window).scrollTop(),
+					  parentRect = el[0].getBoundingClientRect(),
+						visibleElements = el.find(":visible");
+
+					var maxHeight = 0;
+					visibleElements.each(function() {
+						var rect = this.getBoundingClientRect();
+						maxHeight = Math.max(rect.bottom, rect.bottom);
+					});
+
+					el_height = maxHeight -  parentRect.top;
+
 
 					// if element is not currently fixed position, reset measurements ( this handles DOM changes in dynamic pages )
 					if (el.css("position") !== "fixed" && !pos_not_fixed) {
