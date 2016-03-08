@@ -63,11 +63,11 @@
 					var maxHeight = 0;
 					visibleElements.each(function() {
 						var rect = this.getBoundingClientRect();
-						maxHeight = Math.max(rect.bottom, rect.bottom);
+						maxHeight = Math.max(maxHeight, rect.bottom);
 					});
 
 					el_height = maxHeight -  parentRect.top;
-
+					$(el).parent().height(el_height);
 
 					// if element is not currently fixed position, reset measurements ( this handles DOM changes in dynamic pages )
 					if (el.css("position") !== "fixed" && !pos_not_fixed) {
