@@ -19,6 +19,7 @@
 			if (config && config.offset) {
 				config.offset.bottom = parseInt(config.offset.bottom, 10);
 				config.offset.top = parseInt(config.offset.top, 10);
+				config.offset.right = parseInt(config.offset.right, 10);
 			} else {
 				config.offset = {
 					bottom: 100,
@@ -31,7 +32,8 @@
 					el_margin_top = parseInt(el.css("marginTop"), 10) || 0,
 					el_position_top = el.css("top"),
 					el_top = el.offset().top,
-					pos_not_fixed = false;
+					pos_not_fixed = false,
+                    right = ($(window).width() - (el.offset().left + el.outerWidth())) + config.offset.right;
 
 
 				//We prefer feature testing, too much hassle for the upside 
@@ -82,7 +84,8 @@
 							el.css({
 								'position': 'fixed',
 								'top': (config.offset.top - top) + 'px',
-								'width': el_width + "px"
+								'width': el_width + "px",
+                                'right': right + 'px'
 							});
 						}
 					} else {
@@ -90,7 +93,8 @@
 							'position': el_position,
 							'top': el_position_top,
 							'width': el_width + "px",
-							'marginTop': (el_margin_top && !pos_not_fixed ? el_margin_top : 0) + "px"
+							'marginTop': (el_margin_top && !pos_not_fixed ? el_margin_top : 0) + "px",
+                            'right': 0
 						});
 					}
 				});
